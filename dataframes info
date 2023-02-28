@@ -11,7 +11,15 @@ products = pd.read_csv('D:\Openclassrooms\Projets\projet 05\Data\olist_products_
 sellers = pd.read_csv('D:\Openclassrooms\Projets\projet 05\Data\olist_sellers_dataset.csv', sep=',')
 translation = pd.read_csv('D:\Openclassrooms\Projets\projet 05\Data\product_category_name_translation.csv', sep=',')
 
-
+list_data = {'customers': customers, 
+              'geolocalisation': geolocalisation,
+              'order_items': order_items,
+              'order_payments': order_payments,
+              'order_reviews': order_reviews,
+              'orders': orders,
+              'products': products,
+              'sellers': sellers,
+              'translation': translation}
 
 def dataframes_info(list_data):
     list_info = []
@@ -24,15 +32,5 @@ def dataframes_info(list_data):
     df_info = pd.DataFrame(list_info, columns=['name', 'rows', 'columns', 'count',
                                                'NaNs (%)', 'duplicates'])
     return df_info
-
-list_data = {'customers': customers, 
-              'geolocalisation': geolocalisation,
-              'order_items': order_items,
-              'order_payments': order_payments,
-              'order_reviews': order_reviews,
-              'orders': orders,
-              'products': products,
-              'sellers': sellers,
-              'translation': translation}
 
 print(dataframes_info(list_data))
